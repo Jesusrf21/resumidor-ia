@@ -1,0 +1,9 @@
+# Byte-compiled files
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+venv/
+
+# Streamlit secrets (no API key needed but may exist locally)
+.streamlit/secrets.toml

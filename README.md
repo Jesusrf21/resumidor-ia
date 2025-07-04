@@ -1,6 +1,6 @@
 # Resumidor de PDFs con IA
 
-Una aplicación en Python + Streamlit que resume automáticamente documentos PDF usando la API de OpenAI.
+Una aplicación en Python + Streamlit que resume automáticamente documentos PDF utilizando un modelo de Hugging Face, por lo que no se requiere una clave de API.
 
 ## Cómo usar
 
@@ -15,12 +15,7 @@ Una aplicación en Python + Streamlit que resume automáticamente documentos PDF
    pip install -r requirements.txt
    ```
 
-3. Crea un archivo `.streamlit/secrets.toml` con tu clave de API de OpenAI:
-   ```toml
-   OPENAI_API_KEY = "TU_CLAVE"
-   ```
-
-4. Ejecuta la app:
+3. Ejecuta la app:
    ```
    streamlit run app.py
    ```
