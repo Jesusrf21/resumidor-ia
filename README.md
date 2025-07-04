@@ -1,6 +1,8 @@
 # Resumidor de PDFs con IA
 
-Una aplicación en Python + Streamlit que resume automáticamente documentos PDF usando la API de OpenAI.
+Una aplicación en Python + Streamlit que resume automáticamente documentos PDF utilizando modelos gratuitos de Hugging Face.
+
+La aplicación emplea el modelo `csebuetnlp/mT5_multilingual_XLSum`, capaz de generar resúmenes en español.
 
 ## Cómo usar
 

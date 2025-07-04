@@ -2,10 +2,12 @@ import streamlit as st
 import fitz  # PyMuPDF
 from transformers import pipeline
 
-# Cargar el modelo de resumen desde Hugging Face
+# Cargar un modelo de resumen que soporte español
 @st.cache_resource
 def load_summarizer():
-    return pipeline("summarization", model="facebook/bart-large-cnn")
+    # El modelo multilingüe permite generar resúmenes en varios idiomas,
+    # incluida la salida en español cuando el texto de entrada está en ese idioma.
+    return pipeline("summarization", model="csebuetnlp/mT5_multilingual_XLSum")
 
 summarizer = load_summarizer()
 
