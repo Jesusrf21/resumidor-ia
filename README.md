@@ -17,6 +17,9 @@ La aplicación emplea el modelo `csebuetnlp/mT5_multilingual_XLSum`, capaz de ge
    pip install -r requirements.txt
    ```
 
+   **Nota:** se incluye la librería `sentencepiece`, necesaria para que el
+   modelo de resumen funcione correctamente.
+
 3. Crea un archivo `.streamlit/secrets.toml` con tu clave de API de OpenAI:
    ```toml
    OPENAI_API_KEY = "TU_CLAVE"

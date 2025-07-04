@@ -1,13 +1,23 @@
 import streamlit as st
 import fitz  # PyMuPDF
-from transformers import pipeline
+from transformers import (
+    pipeline,
+    AutoTokenizer,
+    AutoModelForSeq2SeqLM,
+)
 
 # Cargar un modelo de resumen que soporte español
 @st.cache_resource
 def load_summarizer():
-    # El modelo multilingüe permite generar resúmenes en varios idiomas,
-    # incluida la salida en español cuando el texto de entrada está en ese idioma.
-    return pipeline("summarization", model="csebuetnlp/mT5_multilingual_XLSum")
+    """Carga el modelo multilingüe y su tokenizer en modo lento.
+
+    Usamos `use_fast=False` para evitar errores de conversión cuando no está
+    disponible el tokenizer rápido.
+    """
+    model_name = "csebuetnlp/mT5_multilingual_XLSum"
+    tokenizer = AutoTokenizer.from_pretrained(model_name, use_fast=False)
+    model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
+    return pipeline("summarization", model=model, tokenizer=tokenizer)
 
 summarizer = load_summarizer()
 
