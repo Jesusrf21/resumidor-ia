@@ -27,7 +27,9 @@ def summarize_text(full_text):
     summaries = []
     for i, block in enumerate(blocks):
         st.info(f"Resumiendo bloque {i + 1} de {len(blocks)}...")
-        summary = summarizer(block, max_length=130, min_length=30, do_sample=False)[0]['summary_text']
+        summary = summarizer(
+            block, max_length=130, min_length=30, do_sample=False
+        )[0]["summary_text"]
         summaries.append(summary)
     return "\n\n".join(summaries)
 
