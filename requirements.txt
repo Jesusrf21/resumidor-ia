@@ -1,5 +1,5 @@
-streamlit
-PyMuPDF
-transformers
-torch
-sentencepiece
+streamlit>=1.30
+PyMuPDF>=1.22.5
+transformers>=4.41.0
+torch>=2.1.2
+sentencepiece>=0.1.99
